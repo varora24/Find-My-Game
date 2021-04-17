@@ -7,19 +7,19 @@ def swap(first, second) :
     second = temp
 
     
-def partition(sort_vec, smallest, greatest) :
+def partition(sort_dict, smallest, greatest) :
 
     partition = smallest
     left = smallest
     right = greatest
 
     while 1 :
-        while sort_vec[left] < sort_vec[partition] :         
+        while sort_dict[left] < sort_dict[partition] :         
             ++left
             if left == greatest :
                 break
 
-        while sort_vec[partition] < sort_vec[right] :
+        while sort_dict[partition] < sort_dict[right] :
             --right
             if right == smallest :
                 break
@@ -27,25 +27,27 @@ def partition(sort_vec, smallest, greatest) :
         if left >= right :
             break
 
-        if sort_vec[left] >= sort_vec[right] :
-            swap(sort_vec[left], sort_vec[right])
+        if sort_dict[left] >= sort_dict[right] :
+            swap(sort_dict[left], sort_dict[right])
 
-    if sort_vec[partition] >= sort_vec[right] :
-        swap(sort_vec[partition], sort_vec[right])
+    if sort_dict[partition] >= sort_dict[right] :
+        swap(sort_dict[partition], sort_dict[right])
 
     return right
 
 
-def quick_sort(sort_vec, smallest, greatest) :
+def quick_sort(sort_dict, smallest, greatest) :
 
-    if len(sort_vec) == 0 or greatest <= smallest :
+    if len(sort_dict) == 0 or greatest <= smallest :
         return
 
     if greatest == (smallest + 1) :
-        if sort_vec[smallest] > sort_vec[greatest] :
-            swap(sort_vec[smallest], sort_vec[greatest])
+        if sort_dict[smallest] > sort_dict[greatest] :
+            swap(sort_dict[smallest], sort_dict[greatest])
         return
 
-    part = partition(sort_vec, smallest, greatest)
-    quick_sort(sort_vec, smallest, part - 1)
-    quick_sort(sort_vec, part + 1, greatest)
+    part = partition(sort_dict, smallest, greatest)
+    quick_sort(sort_dict, smallest, part - 1)
+    quick_sort(sort_dict, part + 1, greatest)
+
+    return sort_dict
