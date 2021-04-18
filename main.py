@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import os
 import sys
 import requests
@@ -8,13 +10,12 @@ from quick_sort import quick_sort_func #allows us to call the quick_sort python 
 
 URL = "https://raw.githubusercontent.com/varora24/Find-My-Game/data/games.json"
 
-
-
 def main():
-	response = requests.get(URL).json(); # accepts response from json file on github which contains information about all games
-	response_sorted = quick_sort_func(response,1,2,False)
 
-	pprint.pprint(response_sorted)
+    response = requests.get(URL).json(); # accepts response from json file on github which contains information about all games
+    response_sorted = quick_sort_func(response, 0, len(response) - 1, 'Maxplayers',False)
+
+    pprint.pprint(response_sorted)
 
 
 if __name__ == '__main__':
