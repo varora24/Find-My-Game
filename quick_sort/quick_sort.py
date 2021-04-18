@@ -7,47 +7,90 @@ def swap(first, second) :
     second = temp
 
     
-def partition(sort_dict, smallest, greatest) :
+def partition(sort_dict, smallest, greatest, index, reverse=False) :
 
     partition = smallest
     left = smallest
     right = greatest
 
-    while 1 :
-        while sort_dict[left] < sort_dict[partition] :         
-            ++left
-            if left == greatest :
+    if reverse :
+
+        while 1 :
+
+            while sort_dict[left][index] < sort_dict[partition][index] :         
+                ++left
+                if left == greatest :
+                    break
+
+            while sort_dict[partition][index] < sort_dict[right][index] :
+                --right
+                if right == smallest :
+                    break
+
+            if left >= right :
                 break
 
-        while sort_dict[partition] < sort_dict[right] :
-            --right
-            if right == smallest :
+            if sort_dict[left][index] >= sort_dict[right][index] :
+                swap(sort_dict[left][index], sort_dict[right][index])
+
+        if sort_dict[partition][index] >= sort_dict[right][index] :
+            swap(sort_dict[partition][index], sort_dict[right][index])
+
+    else :
+
+        while 1 :
+            while sort_dict[left][index] > sort_dict[partition][index] :         
+                --left
+                if left == greatest :
+                    break
+
+            while sort_dict[partition][index] > sort_dict[right][index] :
+                ++right
+                if right == smallest :
+                    break
+
+            if left <= right :
                 break
 
-        if left >= right :
-            break
+            if sort_dict[left][index] <= sort_dict[right][index] :
+                swap(sort_dict[left][index], sort_dict[right][index])
 
-        if sort_dict[left] >= sort_dict[right] :
-            swap(sort_dict[left], sort_dict[right])
+        if sort_dict[partition][index] <= sort_dict[right][index] :
+            swap(sort_dict[partition][index], sort_dict[right][index])
 
-    if sort_dict[partition] >= sort_dict[right] :
-        swap(sort_dict[partition], sort_dict[right])
+        
 
     return right
 
 
-def quick_sort(sort_dict, smallest, greatest) :
+def quick_sort(sort_dict, smallest, greatest, index, reverse=False) :
 
-    if len(sort_dict) == 0 or greatest <= smallest :
-        return
+    if reverse :
 
-    if greatest == (smallest + 1) :
-        if sort_dict[smallest] > sort_dict[greatest] :
-            swap(sort_dict[smallest], sort_dict[greatest])
-        return
+        if len(sort_dict) == 0 or greatest <= smallest :
+            return
 
-    part = partition(sort_dict, smallest, greatest)
-    quick_sort(sort_dict, smallest, part - 1)
-    quick_sort(sort_dict, part + 1, greatest)
+        if greatest == (smallest + 1) :
+            if sort_dict[smallest][index] > sort_dict[greatest][index] :
+                swap(sort_dict[smallest], sort_dict[greatest])
+            return
+
+        part = partition(sort_dict, smallest, greatest, index)
+        quick_sort(sort_dict, smallest, part - 1)
+        quick_sort(sort_dict, part + 1, greatest)
+
+    else :
+        
+        if len(sort_dict) == 0 or greatest >= smallest :
+            return
+
+        if smallest == (greatest - 1) :
+            if sort_dict[smallest][index] < sort_dict[greatest][index] :
+                swap(sort_dict[smallest], sort_dict[greatest])
+            return
+
+        part = partition(sort_dict, smallest, greatest, index)
+        quick_sort(sort_dict, smallest, part - 1)
+        quick_sort(sort_dict, part + 1, greatest)
 
     return sort_dict
