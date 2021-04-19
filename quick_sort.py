@@ -20,6 +20,14 @@ def partition(sort_dict, smallest, greatest, index, reverse=False) :
             left += 1
             if left == greatest :
                 break
+        
+        try:
+           int(sort_dict[partition][index])
+           int(sort_dict[right][index])
+        except:
+           sort_dict[partition][index] = "1"
+           sort_dict[right][index] = "1"
+        
         while int(sort_dict[partition][index]) < int(sort_dict[right][index]) :
             right -= 1
             if right == smallest :
