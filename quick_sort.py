@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import pprint
+from pprint import pprint
 
 def swap(smallest, greatest) :
 
@@ -14,8 +14,6 @@ def partition(sort_dict, smallest, greatest, index, reverse=False) :
     partition = smallest
     left = smallest + 1
     right = greatest
-
-    count = 0
 
     while 1 :
         while int(sort_dict[left][index]) < int(sort_dict[partition][index]) :
@@ -36,12 +34,13 @@ def partition(sort_dict, smallest, greatest, index, reverse=False) :
                 break
         if left >= right :
             break
-        elif int(sort_dict[left][index]) > int(sort_dict[right][index]) :
+        
+        if int(sort_dict[left][index]) >= int(sort_dict[right][index]) :
             swap(sort_dict[left], sort_dict[right])
             break
 
 
-    if int(sort_dict[partition][index]) > int(sort_dict[right][index]) :
+    if int(sort_dict[partition][index]) >= int(sort_dict[right][index]) :
         swap(sort_dict[partition], sort_dict[right])
 
     return right
@@ -62,3 +61,5 @@ def quick_sort_func(sort_dict, smallest, greatest, index, reverse=False) :
     part = partition(sort_dict, smallest, greatest, index)
     quick_sort_func(sort_dict, smallest, part - 1, index)
     quick_sort_func(sort_dict, part + 1, greatest, index)
+
+
