@@ -36,12 +36,15 @@ def partition(sort_dict, smallest, greatest, index) :
             break
         
         if int(sort_dict[left][index]) >= int(sort_dict[right][index]) :
-            swap(sort_dict[left], sort_dict[right])
+            #swap(sort_dict[left], sort_dict[right])
+            sort_dict[left], sort_dict[right] = sort_dict[right], sort_dict[left]
+
             break
 
 
     if int(sort_dict[partition][index]) >= int(sort_dict[right][index]) :
-        swap(sort_dict[partition], sort_dict[right])
+        #swap(sort_dict[partition], sort_dict[right])
+        sort_dict[partition], sort_dict[right] = sort_dict[right], sort_dict[partition]
 
     return right
 
@@ -50,11 +53,13 @@ def partition(sort_dict, smallest, greatest, index) :
 def quick_sort_func(sort_dict, smallest, greatest, index) :
 
     if len(sort_dict) == 0 or greatest <= smallest :
+        pprint(sort_dict)
         return
 
     if greatest == (smallest + 1) :
         if int(sort_dict[smallest][index]) > int(sort_dict[greatest][index]) :
-            swap(sort_dict[smallest], sort_dict[greatest])
+            #swap(sort_dict[smallest], sort_dict[greatest])
+            sort_dict[smallest], sort_dict[greatest] = sort_dict[greatest], sort_dict[smallest]
         return
 
 
