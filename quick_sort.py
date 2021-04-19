@@ -9,7 +9,7 @@ def swap(smallest, greatest) :
     greatest = temp
        
 
-def partition(sort_dict, smallest, greatest, index, reverse=False) :
+def partition(sort_dict, smallest, greatest, index) :
 
     partition = smallest
     left = smallest + 1
@@ -21,12 +21,12 @@ def partition(sort_dict, smallest, greatest, index, reverse=False) :
             if left == greatest :
                 break
         
-        try:
-           int(sort_dict[partition][index])
-           int(sort_dict[right][index])
-        except:
-           sort_dict[partition][index] = "1"
-           sort_dict[right][index] = "1"
+        #try:
+         #  int(sort_dict[partition][index])
+          # int(sort_dict[right][index])
+        #except:
+         #  sort_dict[partition][index] = "1"
+          # sort_dict[right][index] = "1"
         
         while int(sort_dict[partition][index]) < int(sort_dict[right][index]) :
             right -= 1
@@ -47,7 +47,7 @@ def partition(sort_dict, smallest, greatest, index, reverse=False) :
 
 
 
-def quick_sort_func(sort_dict, smallest, greatest, index, reverse=False) :
+def quick_sort_func(sort_dict, smallest, greatest, index) :
 
     if len(sort_dict) == 0 or greatest <= smallest :
         return
