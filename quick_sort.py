@@ -53,7 +53,6 @@ def partition(sort_dict, smallest, greatest, index) :
 def quick_sort_func(sort_dict, smallest, greatest, index) :
 
     if len(sort_dict) == 0 or greatest <= smallest :
-        pprint(sort_dict)
         return
 
     if greatest == (smallest + 1) :
@@ -67,4 +66,4 @@ def quick_sort_func(sort_dict, smallest, greatest, index) :
     quick_sort_func(sort_dict, smallest, part - 1, index)
     quick_sort_func(sort_dict, part + 1, greatest, index)
 
-
+    return sort_dict

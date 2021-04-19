@@ -14,11 +14,10 @@ def main():
 
     response = open(file_name,) #requests.get(URL).json() # accepts response from json file on github which contains information about all games
     data = json.load(response);
-    pprint(data)
     
-    quick_sort_func(data, 0, len(data) - 1, 'Minplayers')
+    data = quick_sort_func(data, 0, len(data) - 1, 'Minplayers')
 
-    pprint(response)
+    pprint(data)
 
 if __name__ == '__main__':
 	main()
