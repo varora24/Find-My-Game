@@ -1,8 +1,9 @@
-# Find My Game
+# Find My Game [<img align="right" alt="Find My Game | Logo" width="175px" src="https://i.ibb.co/qxjcPtZ/Untitled-design.png" />][logo]
+
 A website aimed to help you find games to play remotely with your friends and family.
 All you need to do is tell us how many people youre playing with and what kind of game you want.
 Leave the rest to us!
-
+ ---
 ## Overview:
 The objective of this project is to build an easy to use, accessible, and useful website for people to find online games to play with their friends remotely. Especially due to the spike in Google Meets and Zoom usage, this website could find widespread success with people who can’t interact in person with one another. The user has the ability to customize fields like number of players, time available and age rating to filter through the games. 
 
@@ -18,4 +19,5 @@ This website will search through a database of games to filter out the ones whic
 3. Tor Cox ; Computer Science Student, ND'23
 4. Gracie Molnar ; Computer Science Student, ND'23
 
-
+---
+[logo]: https://i.ibb.co/qxjcPtZ/Untitled-design.png
