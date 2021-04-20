@@ -7,7 +7,8 @@ import json
 from pprint import pprint
 from count_sort import count_sort_func
 from bubble_sort import bubble_sort_func
-
+from binary_search import binary_search
+from binary_search import make_list
 file_name = "games.json"
 index = 'Minplayers'
 def main():
@@ -18,10 +19,9 @@ def main():
        if i[index] > maxval:
           maxval = i[index]
     data = bubble_sort_func(data,index)
+    found = make_list(data,index, 3)
     #data = count_sort_func(data,maxval,index)
-    #pprint (sorted(data, key = lambda i: i['Minplayers']))
-    #pprint(data)
-
+   
 if __name__ == '__main__':
 	main()
 
