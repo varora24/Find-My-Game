@@ -1,4 +1,4 @@
-# Find My Game [<img align="right" alt="Find My Game | Logo" width="175px" src="https://i.ibb.co/qxjcPtZ/Untitled-design.png" />][logo]
+# Find My Game <img align="right" alt="Find My Game | Logo" width="175px" src="https://i.ibb.co/nsKY9yb/Untitled-design-removebg-preview.png" />
 
 A website aimed to help you find games to play remotely with your friends and family.
 All you need to do is tell us how many people youre playing with and what kind of game you want.
@@ -20,4 +20,4 @@ This website will search through a database of games to filter out the ones whic
 4. Gracie Molnar ; Computer Science Student, ND'23
 
 ---
-[logo]: https://i.ibb.co/qxjcPtZ/Untitled-design.png
+[logo]: https://i.ibb.co/nsKY9yb/Untitled-design-removebg-preview.png
