@@ -38,4 +38,6 @@ def binary_search(arr, category, low, high, val):
  
     else:
         # Element is not present in the array
-        return -1 
+        return -1
+
+ 
