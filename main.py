@@ -20,8 +20,8 @@ def main():
           maxval = i[index]
     data = bubble_sort_func(data,index)
     found = make_list(data,index, 3)
-    #data = count_sort_func(data,maxval,index)
-   
+    #data = count_sort_func(data,maxval,index)`
+ 
 if __name__ == '__main__':
 	main()
 
