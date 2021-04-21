@@ -1,8 +1,27 @@
 * {
-    padding: 0;
+    padding: 7;
     margin: 0;
     box-sizing: border-box;
+	font-family: 'Press Start 2P', cursive;
+	text-shadow: 3px 3px #ff0000;
 }
 html{
     font-family: 'HK Modular', Times, serif;
 }
+body {
+	background-image: url('https://i.ibb.co/mbgpFyz/image.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+div {
+	text-align: center;
+	size = "15"
+	padding: 15;
+}
+h1 {
+	font-family:verdana;
+	font-size:200%;
+	color:white;
+}
+
