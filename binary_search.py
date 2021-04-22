@@ -2,15 +2,15 @@
 
 #Creates a list for all of the values of a specific category
 def make_list(arr, category, val):
+	#Checks for special players instance of call
+	if(category == "Maxplayers"):
+		return make_list_players(arr, category, val)
+
 	position = binary_search(arr, category, 0, len(arr), val)
 
 	#Checks if an error occured
 	if(position == -1):
-		return
-
-	#Checks for special players instance of call
-	if(category == "Minplayers"):
-		return make_list_players(arr, category, val, position)
+		return	
 
 	high = position
 	low = position
@@ -28,23 +28,14 @@ def make_list(arr, category, val):
 	#return range(low, high+1)
 
 #Make list function for player counts
-def make_list_players(arr, category, val, position):
-	high = position
-	low = position
-	new_arr = [arr[position]]
-	#pos_arr = [position]
+def make_list_players(arr, category, val):
+	position = len(arr)-1
+	new_arr = []
 
-	while(high+1 < len(arr) and arr[high+1][category] <= val):
-		if(arr[high+1]["Maxplayers"] >= val):
-			new_arr.append(arr[high+1])
-			#pos_arr.append(high+1)
-		high += 1
-		
-	while(low-1 >= 0 and arr[low-1][category] <= val):
-		if(arr[low-1]["Maxplayers"] >= val):
-			new_arr.append(arr[low-1])
-			#pos_arr.insert(0, low-1)
-		low -= 1
+	while(position >= 0 and arr[position][category] >= val):
+		if(arr[position]["Minplayers"] <= val):
+			new_arr.insert(0,arr[position])
+		position -= 1
 
 	return new_arr
 

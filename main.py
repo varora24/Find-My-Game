@@ -11,7 +11,7 @@ from binary_search import *
 from filter_list import *
 
 file_name = "games.json"
-index = 'Minplayers'
+index = 'Maxplayers'
 index2 = 'Category'
 dict_index = {'Category': 'Strategy', 'Format': 'Website'}
 
@@ -23,7 +23,7 @@ def main():
        if i[index] > maxval:
           maxval = i[index]
     data = bubble_sort_func(data,index)
-    found = make_list(data,index, 3)
+    found = make_list(data,index,3)
     found2 = filter_list(found, index2, "Strategy")
     found3 = filter_list_dict(found, dict_index)
     print(f'{found}\n\n\n{found2}\n\n\n{found3}')
