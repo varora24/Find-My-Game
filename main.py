@@ -7,10 +7,8 @@ import json
 from pprint import pprint
 from count_sort import count_sort_func
 from bubble_sort import bubble_sort_func
-from binary_search import binary_search
-from binary_search import make_list
-from filter_list import filter_list
-from filter_list import filter_list_dict
+from binary_search import *
+from filter_list import *
 
 file_name = "games.json"
 index = 'Minplayers'
@@ -28,7 +26,7 @@ def main():
     found = make_list(data,index, 3)
     found2 = filter_list(found, index2, "Strategy")
     found3 = filter_list_dict(found, dict_index)
-    #print(f'{found}\n\n\n{found2}\n\n\n{found3}')
+    print(f'{found}\n\n\n{found2}\n\n\n{found3}')
 	
     #data = count_sort_func(data,maxval,index)`
  
