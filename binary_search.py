@@ -14,32 +14,39 @@ def make_list(arr, category, val):
 
 	high = position
 	low = position
+	new_arr = [arr[position]]
 
 	while(high+1 < len(arr) and arr[high+1][category] == val):
+		new_arr.append(arr[high+1])
 		high += 1
-		
+			
 	while(low-1 >= 0  and arr[low-1][category] == val):
+		new_arr.append(arr[low-1])
 		low -= 1
 
-	return range(low, high+1)
+	return new_arr
+	#return range(low, high+1)
 
 #Make list function for player counts
 def make_list_players(arr, category, val, position):
 	high = position
 	low = position
-	pos_arr = [position]
+	new_arr = [arr[position]]
+	#pos_arr = [position]
 
 	while(high+1 < len(arr) and arr[high+1][category] <= val):
 		if(arr[high+1]["Maxplayers"] >= val):
-			pos_arr.append(high+1)
+			new_arr.append(arr[high+1])
+			#pos_arr.append(high+1)
 		high += 1
 		
 	while(low-1 >= 0 and arr[low-1][category] <= val):
-		if( arr[low-1]["Maxplayers"] >= val):
-			pos_arr.insert(0, low-1)
+		if(arr[low-1]["Maxplayers"] >= val):
+			new_arr.append(arr[low-1])
+			#pos_arr.insert(0, low-1)
 		low -= 1
 
-	return pos_arr
+	return new_arr
 
 #Binary Search to find first instance of a value amongst the dictionary values
 def binary_search(arr, category, low, high, val):
