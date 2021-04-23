@@ -24,4 +24,24 @@ h1 {
 	font-size:200%;
 	color:white;
 }
+div2 {
+	text-align: center;
+	display: none;
+}
+.box {
+  background-color: black;
+  opacity: 0.5;
+  filter:alpha(opacity=80);
+  width: fit-content
+  height: fit-content
+  padding: 10px;
+
+  -moz-border-radius:30px;
+  -webkit-border-radius:30px;
+  border-radius:30px;
+  border: #solid 10px #000;
+  width:80%;
+  margin-left: auto ;
+  margin-right: auto ;
+}
 
