@@ -12,6 +12,7 @@ This website will search through a database of games to filter out the ones whic
 ## Languages used: 
 1. Python
 2. HTML/CSS
+3. Javascript
 
 ## Team
 1. Vaibhav Arora ; Computer Engineering Student, ND'23
