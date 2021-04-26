@@ -19,12 +19,13 @@
 				</div>
     			</div>
 		</div>
+		<form onsubmit="submitEvent()">
 		<h1  ><center><label for="numplayer">Players:</label>
-			<input size="4" placeholder="1" style="height:50px; width:100px;" type="text" id="nunplayer" maxlength="3" minlength="1" required name="num players"></input>
+			<input id="numplayers" size="4" placeholder="1-100" style="height:50px; width:100px;" type="text" maxlength="3" minlength="1" required name="num players"></input>
 		</center></h1>
 		
 		<h1> <center>Genre:
-		<select name=”genre” style="height:50px; width:150px;">
+		<select id="genre" name=”genre” style="height:50px; width:150px;">
 			<option value="all">All</option>
 			<option value=”strategy”>Strategy</option>
 			<option value=draw>Drawing</option>
@@ -38,17 +39,19 @@
 			</select>
 		</center></h1>
 		<h1 ><center>Mode:
-			<select name=”genre” style="height:50px; width:200px;">
+			<select name=”mode” id="mode" style="height:50px; width:200px;">
 				<option value=”both”>App/Website</option>
 				<option value="site">Website</option>
 				<option value="app">App</option>
 			</select>
 		</center></h1>
+
 		<br></br>
 		<div>
-			    <input href="#" onclick="showbox()" type="submit" title="SEARCH" />
+			<button href="#" onclick="submitEvent()" name="submit" title="SEARCH">SEARCH</button>
 		</div>
 		<br />
+		</form>
 		<center>
 		<div2 id="backbox" href="#" display="none" class="box">
 			 Warning: This website is in development.
