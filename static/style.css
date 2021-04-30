@@ -8,17 +8,14 @@
 html{
     font-family: 'HK Modular', Times, serif;
 }
-body {
-	background-image: url('https://i.ibb.co/mbgpFyz/image.png');
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-}
+
+
 div {
 	text-align: center;
 	size = "15"
 	padding: 15;
 }
+
 h1 {
 	font-family:verdana;
 	font-size:200%;
@@ -29,15 +26,20 @@ h1 {
   background-color: black;
   opacity: 0.5;
   filter:alpha(opacity=80);
-  width: fit-content
+  width: 80%
   height: fit-content
   padding: 10px;
-
-  -moz-border-radius:30px;
-  -webkit-border-radius:30px;
-  border-radius:30px;
+  border-radius:50px;
   border: #solid 10px #000;
   width:80%;
   margin-left: auto ;
   margin-right: auto ;
+}
+
+.container{
+  background-color: white;
+  opacity: 1;
+  width: 80%;
+  height: fit-content;
+
 }
