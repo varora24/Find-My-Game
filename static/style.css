@@ -9,6 +9,15 @@ html{
     font-family: 'HK Modular', Times, serif;
 }
 
+body  {
+  background-image: url('https://i.ibb.co/mbgpFyz/image.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: scroll;
+  height:fixed;
+  background-position: center;
+}
 
 div {
 	text-align: center;
@@ -43,3 +52,38 @@ h1 {
   height: fit-content;
 
 }
+
+
+div2 {
+  text-align: left;
+  size: "15";
+  padding: 15;
+}
+
+.logo{
+  width: fit-content;
+  height: fit-content;
+  
+}
+
+.mt-50 {
+    margin-top: 50px
+}
+
+.mb-50 {
+    margin-bottom: 50px
+}
+
+.bg-teal-400 {
+    background-color: #26a69a
+}
+
+a {
+    text-decoration: none !important
+}
+
+.fa {
+    color: red
+}
+
+
