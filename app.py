@@ -17,7 +17,8 @@ dataout = []
 
 @app.route('/', methods=['POST','GET'])
 def index():
-
+    response = requests.get(URL)
+    data = response.json()
     data = bubble_sort_func(data, 'Maxplayers')
 
     if request.method == 'GET': # GET request is sent when html wants some information from the python script
@@ -78,9 +79,9 @@ def check_valid(value):
         value['Category'] = 'Fun'
     if not value['Description']:
         value['Description'] = 'No description'
-    if not value['Time']
+    if not value['Time']:
         value['Time'] = '30 min'
-    if not value['Price']
+    if not value['Price']:
         value['Price'] = '0'
     if not value['Format']:
         value['Format'] = 'Website'
