@@ -67,30 +67,14 @@ def findmatches(numplayers, genre, mode):
                 dataout.append(games)
 
 
-def check_valid(value):
+def check_valid(data):
 
-    if not value['Title']:
-        value['Title'] = 'No name'
-    if not value['Minplayers']:
-        value['Minplayers'] = 1
-    if not value['Maxplayers']:
-        value['Maxplayers'] = 2
-    if not value['Category']:
-        value['Category'] = 'Fun'
-    if not value['Description']:
-        value['Description'] = 'No description'
-    if not value['Time']:
-        value['Time'] = '30 min'
-    if not value['Price']:
-        value['Price'] = '0'
-    if not value['Format']:
-        value['Format'] = 'Website'
-    if not value['URL']:
-        value['URL'] = 'No URL'
-    if not value['Picture']:
-        value['Picture'] = 'https://i.ibb.co/qxjcPtZ/Untitled-design.png'
+    defaults = {'Title': 'No Name', 'Minplayers': 1, 'Maxplayers': 2, 'Category': 'Fun', 'Description': 'No Description', 'Time': 30, 'Price': 0, 'Format': 'Website', 'URL': 'No URL', 'Picture': 'https://i.ibb.co/qxjcPtZ/Untitled-design.png'}
 
-    return value
+    for value in data:
+        for attribute in defaults:
+            if attribute not in value:
+                value[attribute] = defaults[attribute]
 
 
 def bubble_sort_func(data, index):
