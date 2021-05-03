@@ -2,8 +2,8 @@
     padding: 7;
     margin: 0;
     box-sizing: border-box;
-	font-family: 'Press Start 2P', cursive;
-	text-shadow: 3px 3px #ff0000;
+	  font-family: 'Press Start 2P', cursive;
+	  text-shadow: 3px 3px #ff0000;
 }
 html{
     font-family: 'HK Modular', Times, serif;
@@ -21,7 +21,7 @@ body  {
 
 div {
 	text-align: center;
-	size = "15"
+	size: "15";
 	padding: 15;
 }
 
@@ -35,26 +35,25 @@ h1 {
   background-color: black;
   opacity: 0.5;
   filter:alpha(opacity=80);
-  width: 80%
-  height: fit-content
+  width: 80%;
+  height: fit-content;
   padding: 10px;
-  border-radius:50px;
-  border: #solid 10px #000;
-  width:80%;
-  margin-left: auto ;
-  margin-right: auto ;
+  border-radius: 50px;
+  border: 10px #000;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .container{
   background-color: white;
   opacity: 1;
   width: 80%;
-  height: fit-content;
-
+  height: fit-content
 }
 
 
-div2 {
+.div2 {
   text-align: left;
   size: "15";
   padding: 15;
@@ -65,27 +64,6 @@ div2 {
   height: fit-content;
 
 }
-
-.mt-50 {
-    margin-top: 50px
-}
-
-.mb-50 {
-    margin-bottom: 50px
-}
-
-.bg-teal-400 {
-    background-color: #26a69a
-}
-
-a {
-    text-decoration: none !important
-}
-
-.fa {
-    color: red
-}
-
 
 
 
