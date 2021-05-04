@@ -26,7 +26,8 @@ def index():
         mode = request.form.get('mode')
 
         findmatches(numplayers, genre, mode)
-        
+		length = len(data)       
+ 
         print(dataout)
 
     return render_template("index.html")
