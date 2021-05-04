@@ -25,15 +25,15 @@ def index():
         genre = request.form.get('genre')
         mode = request.form.get('mode')
 
-        findmatches(data,numplayers, genre, mode)
-		length = len(data)       
+        findmatches(data, dataout, numplayers, genre, mode)
+		length = len(dataout)       
  
         print(dataout)
 
     return render_template("index.html")
 
 
-def findmatches(data,numplayers, genre, mode):
+def findmatches(data, dataout, numplayers, genre, mode):
 
     if not numplayers:
         numplayers = 1
