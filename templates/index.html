@@ -67,22 +67,31 @@
 			</center>
 		</p>
 
-		<div class="box" id="target" >
+
+
+		<div class="box" id="target" style="opacity: 0.75;" >
 			{% for game in games %}
-			<div2 class="container" style="background-color: white;width: 100%;border-radius: 50px;"><center>
+			<div2 class="container"><center>
 				<table style="background-color: white;width: 100%;border-radius: 50px;">
 					<tr>
 						<td>
 							<img style="max-height: 200px;max-width: 200px" src="https://i.ibb.co/SdxwqHd/Untitled-design-1-removebg-preview.png">
 						</td>
 						<td>
-							<h1> {{game.Title}} </h1>
+							<h1> {{game.Title}} - {{game.Category}} </h1>
 							<p> {{game.Description}} </p>
 							<p>Min Players:{{game.Minplayers}}   Max Players:{{game.Maxplayers}} </p>
+							<p>Time:{{game.Time}} min   Price:${{game.Price}} </p>
 							
 						</td>
 						<td>
-							<button >Visit</button>
+							<center>
+								<button>Play</button><br />
+								<br>
+								<p> {{game.Format}} </p>
+							</center>
+							
+							
 						</td>
 					</tr>
 				</table>
