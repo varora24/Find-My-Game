@@ -18,7 +18,7 @@ def index():
     dataout = []
 
     if request.method == 'GET': # GET request is sent when html wants some information from the python script
-        return render_template('index.html')
+        return render_template('index.html', numgames = 0)
     
     if request.method == 'POST': # POST request is sent when the html is sending sdata to the python code for processing
         numplayers=request.form.get('numplayers')
@@ -26,11 +26,11 @@ def index():
         mode = request.form.get('mode')
 
         findmatches(data, dataout, numplayers, genre, mode)
-		length = len(dataout)       
+        length = len(dataout)       
  
         print(dataout)
 
-    return render_template("index.html")
+    return render_template("index.html", numgames = length, games = dataout)
 
 
 def findmatches(data, dataout, numplayers, genre, mode):
@@ -84,5 +84,4 @@ def bubble_sort_func(data, index):
                 data[j], data[j + 1] = data[j + 1], data[j]
 
     return data
-
 
