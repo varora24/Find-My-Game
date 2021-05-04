@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import requests
 import json 
 import os
@@ -15,7 +13,6 @@ def index():
     response = requests.get(URL)
     data = response.json()
     data = bubble_sort_func(data, 'Maxplayers')
-    dataout = []
 
     if request.method == 'GET': # GET request is sent when html wants some information from the python script
         return render_template('index.html', numgames = 0)
@@ -25,15 +22,18 @@ def index():
         genre = request.form.get('genre')
         mode = request.form.get('mode')
 
-        findmatches(data, dataout, numplayers, genre, mode)
+        dataout = findmatches(data, numplayers, genre, mode)
         length = len(dataout)       
  
-        print(dataout)
-
     return render_template("index.html", numgames = length, games = dataout)
 
 
-def findmatches(data, dataout, numplayers, genre, mode):
+def findmatches(data, numplayers, genre, mode):
+
+    dataout = []
+
+    genre = genre.strip()
+    mode = mode.strip()
 
     if not numplayers:
         numplayers = 1
@@ -43,25 +43,23 @@ def findmatches(data, dataout, numplayers, genre, mode):
     for game in data:
         genrematch = False
         modematch = False
-        if game["Minplayers"]<=numplayers and game["Maxplayers"]>=numplayers:
-            if not genre == "all":
-                if game["Category"]==genre:
-                    print("genre match found")
-                    genrematch= True
-            else:
-                print("genre all")
+        if game["Minplayers"] <= numplayers and game["Maxplayers"] >= numplayers:
+            if genre != 'all':
+                if game["Category"] == genre:
+                    genrematch = True
+            else: 
                 genrematch = True
-
-            if not mode == "both":
-                if game["Format"]== mode:
-                    print("mode match found")
-                    modematch = True
+            
+            if mode != 'both':
+                if game["Format"] == mode:
+                    modematch = True    
             else:
-                print("mode all")
-                modematch = True
+                modematch = True  
 
             if modematch == True and genrematch == True:
-                dataout.append(games)
+                dataout.append(game)
+
+    return dataout
 
 
 def check_valid(data):
@@ -84,4 +82,3 @@ def bubble_sort_func(data, index):
                 data[j], data[j + 1] = data[j + 1], data[j]
 
     return data
-
