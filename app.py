@@ -10,16 +10,12 @@ app = Flask(__name__)
 
 URL = "https://raw.githubusercontent.com/varora24/Find-My-Game/main/games.json"
 
-response = requests.get(URL)
-data = response.json()
-
-dataout = []
-
 @app.route('/', methods=['POST','GET'])
 def index():
     response = requests.get(URL)
     data = response.json()
     data = bubble_sort_func(data, 'Maxplayers')
+    dataout = []
 
     if request.method == 'GET': # GET request is sent when html wants some information from the python script
         return render_template('index.html')
