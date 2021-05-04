@@ -71,10 +71,9 @@ def check_valid(data):
 
     defaults = {'Title': 'No Name', 'Minplayers': 1, 'Maxplayers': 2, 'Category': 'Fun', 'Description': 'No Description', 'Time': 30, 'Price': 0, 'Format': 'Website', 'URL': 'No URL', 'Picture': 'https://i.ibb.co/qxjcPtZ/Untitled-design.png'}
 
-    for value in data:
-        for attribute in defaults:
-            if attribute not in value:
-                value[attribute] = defaults[attribute]
+    for attribute in defaults:
+        if attribute not in data:
+            data[attribute] = defaults[attribute]
 
 
 def bubble_sort_func(data, index):
