@@ -67,42 +67,32 @@
 			</center>
 		</p>
 
-		<div class="box" id="target" style="" >
-			<div2 class="container"><center>
+		<div class="box" id="target" >
+			{% for game in games %}
+			<div2 class="container" style="background-color: white;width: 100%;border-radius: 50px;"><center>
 				<table style="background-color: white;width: 100%;border-radius: 50px;">
 					<tr>
 						<td>
-							<img style="max-height: 200px;max-width: 200px" ="image" src="https://i.ibb.co/SdxwqHd/Untitled-design-1-removebg-preview.png">
+							<img style="max-height: 200px;max-width: 200px" src="https://i.ibb.co/SdxwqHd/Untitled-design-1-removebg-preview.png">
 						</td>
 						<td>
-							<h1> Game Title </h1>
-							<p> Game Description </p>
+							<h1> {{game.Title}} </h1>
+							<p> {{game.Description}} </p>
+							<p>Min Players:{{game.Minplayers}}   Max Players:{{game.Maxplayers}} </p>
+							
 						</td>
 						<td>
-							<button>Visit</button>
+							<button >Visit</button>
 						</td>
 					</tr>
 				</table>
 			</center></div2>
+			{% endfor %}
 
-			<div2 class="container"><center>
-				<table style="background-color: white;width: 100%;border-radius: 50px;">
-					<tr>
-						<td>
-							<img style="max-height: 200px;max-width: 200px" ="image" src="https://i.ibb.co/SdxwqHd/Untitled-design-1-removebg-preview.png">
-						</td>
-						<td>
-							<h1> Game Title </h1>
-							<p> Game Description </p>
-						</td>
-						<td>
-							<button>Visit</button>
-						</td>
-					</tr>
-				</table>
-			</center></div2>
 
 	</div>
+
+
 
 
 	</body>
