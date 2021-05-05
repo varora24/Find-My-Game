@@ -54,19 +54,14 @@
 		<br />
 		</form>
 
-		<script type="text/javascript">
-			document.getElementById('sub').onClick = function(event) {
-          		document.getElementById("target").style.display = "inLine";
-        	}
-		</script>
 
 
+		{% if numelements %}
 		<p>
 			<center>
 				We found {{numgames}} Games!
 			</center>
 		</p>
-
 
 
 		<div class="box" id="target" style="opacity: 0.75;" >
@@ -75,7 +70,7 @@
 				<table style="background-color: white;width: 100%;border-radius: 50px;">
 					<tr>
 						<td>
-							<img style="max-height: 200px;max-width: 200px" src="https://i.ibb.co/SdxwqHd/Untitled-design-1-removebg-preview.png">
+							<img style="max-height: 200px;max-width: 200px" src="{{game.Picture}}" alt="No Image" >
 						</td>
 						<td>
 							<h1> {{game.Title}} - {{game.Category}} </h1>
@@ -86,7 +81,7 @@
 						</td>
 						<td>
 							<center>
-								<button>Play</button><br />
+								<button onClick = "{{game.URL}}">Play</button><br />
 								<br>
 								<p> {{game.Format}} </p>
 							</center>
@@ -98,6 +93,7 @@
 			</center></div2>
 			{% endfor %}
 
+		{% endif %}
 
 	</div>
 
