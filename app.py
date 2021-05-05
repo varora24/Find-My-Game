@@ -21,7 +21,6 @@ def index():
         numplayers=request.form.get('numplayers')
         genre = request.form.get('genre')
         mode = request.form.get('mode')
-
         dataout = findmatches(data, numplayers, genre, mode)
         length = len(dataout)       
  
@@ -31,8 +30,9 @@ def index():
 def findmatches(data, numplayers, genre, mode):
 
     dataout = []
-
     genre = genre.strip()
+    if genre != "Cards":
+        genre = genre[1:-1]
     mode = mode.strip()
 
     if not numplayers:
@@ -44,14 +44,14 @@ def findmatches(data, numplayers, genre, mode):
         genrematch = False
         modematch = False
         if game["Minplayers"] <= numplayers and game["Maxplayers"] >= numplayers:
-            if genre != 'all':
+            if genre != "all":
                 if game["Category"] == genre:
                     genrematch = True
             else: 
                 genrematch = True
             
-            if mode != 'both':
-                if game["Format"] == mode:
+            if mode != "both":
+                if game["Format"] == mode or game["Format"] == "App/Website":
                     modematch = True    
             else:
                 modematch = True  
