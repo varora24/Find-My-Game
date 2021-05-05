@@ -23,7 +23,6 @@ def index():
         mode = request.form.get('mode')
         dataout = findmatches(data, numplayers, genre, mode)
         length = len(dataout)       
-        print(dataout)
  
     return render_template("index.html", numgames = length, games = dataout)
 
@@ -46,8 +45,6 @@ def findmatches(data, numplayers, genre, mode):
         modematch = False
         if game["Minplayers"] <= numplayers and game["Maxplayers"] >= numplayers:
             if genre != "all":
-                print(game["Category"])
-                print(genre)
                 if game["Category"] == genre:
                     genrematch = True
             else: 
