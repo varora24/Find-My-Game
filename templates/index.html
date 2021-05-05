@@ -26,7 +26,7 @@
 		</center></h1>
 		
 		<h1> <center>Genre:
-		<select id="genre" name="genre" style="height:50px; width:150px;">
+		<select id="genre" name='genre' style="height:50px; width:150px;">
 			<option value="all">All</option>
 			<option value=”Strategy”>Strategy</option>
 			<option value="Drawing">Drawing</option>
@@ -40,7 +40,7 @@
 			</select>
 		</center></h1>
 		<h1 ><center>Mode:
-			<select name="mode" id="mode" style="height:50px; width:200px;">
+			<select name='mode' id="mode" style="height:50px; width:200px;">
 				<option value="both">App/Website</option>
 				<option value="Website">Website</option>
 				<option value="App">App</option>
@@ -63,11 +63,11 @@
 			</center>
 		</p>
 
-
-		<div class="box" id="target" style="opacity: 0.75;" >
+		{% if numgames!=0 %}
+		<div class="box" id="target" style="opacity: 0.9;" >
 			{% for game in games %}
 			<div2 class="container"><center>
-				<table style="background-color: white;width: 100%;border-radius: 50px;">
+				<table style="background-color: grey;width: 100%;border-radius: 50px;">
 					<tr>
 						<td>
 							<img style="max-height: 200px;max-width: 200px" src="{{game.Picture}}" alt="No Image" >
@@ -81,7 +81,9 @@
 						</td>
 						<td>
 							<center>
-								<button onClick = "{{game.URL}}">Play</button><br />
+								<form action="{{game.URL}}" method="get" target="_blank">
+         							<button type="submit">Play</button>
+         						</form>
 								<br>
 								<p> {{game.Format}} </p>
 							</center>
@@ -92,6 +94,7 @@
 				</table>
 			</center></div2>
 			{% endfor %}
+		{% endif %}
 
 		{% endif %}
 
