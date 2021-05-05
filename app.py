@@ -34,23 +34,24 @@ def findmatches(data, numplayers, genre, mode):
 
     genre = genre.strip()
     mode = mode.strip()
-
     if not numplayers:
         numplayers = 1
-
+    if genre != "Cards" and genre != "Drawing":
+        genre = genre[1:-1]
     numplayers = int(numplayers)
 
     for game in data:
         genrematch = False
         modematch = False
         if game["Minplayers"] <= numplayers and game["Maxplayers"] >= numplayers:
-            if genre != 'all':
+            print(genre)
+            if genre != "all":
                 if game["Category"] == genre:
                     genrematch = True
             else: 
                 genrematch = True
             
-            if mode != 'both':
+            if mode != "both":
                 if game["Format"] == mode:
                     modematch = True    
             else:
