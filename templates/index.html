@@ -67,16 +67,17 @@
 		<div class="box" id="target" style="opacity: 0.9;" >
 			{% for game in games %}
 			<div2 class="container"><center>
-				<table style="background-color: grey;width: 100%;border-radius: 50px;">
+				<table style="background-color: white;width: 100%;border-radius: 50px;">
 					<tr>
 						<td>
 							<img style="width: 90%;max-width: 400px;max-height: 400px" src="{{game.Picture}}" alt="No Image" >
 						</td>
 						<td>
-							<h1> {{game.Title}} - {{game.Category}} </h1>
-							<p> {{game.Description}} </p>
-							<p>Min Players:{{game.Minplayers}}   Max Players:{{game.Maxplayers}} </p>
-							<p>Time:{{game.Time}}min   Price:${{game.Price}} </p>
+							<h1 style="color: black;"> {{game.Title}} - {{game.Category}} </h1>
+							<p style="text-shadow: 0px 0px #FF0000;line-height: 1.5"> {{game.Description}} </p>
+							<p style="text-shadow: 0px 0px #FF0000;">Players:{{game.Minplayers}}-{{game.Maxplayers}} </p>
+							<p style="text-shadow: 0px 0px #FF0000;">Time:{{game.Time}}min </p>
+							<p style="text-shadow: 0px 0px #FF0000;">Price:${{game.Price}} </p>
 							
 						</td>
 						<td>
