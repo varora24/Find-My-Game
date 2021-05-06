@@ -1,4 +1,4 @@
-# Find My Game <img align="right" alt="Find My Game | Logo" width="175px" src="https://i.ibb.co/nsKY9yb/Untitled-design-removebg-preview.png" />
+# Find My Game <img align="right" alt="Find My Game | Logo" width="175px" src="https://i.ibb.co/SdxwqHd/Untitled-design-1-removebg-preview.png" />
 
 A website aimed to help you find games to play remotely with your friends and family.
 All you need to do is tell us how many people youre playing with and what kind of game you want.
