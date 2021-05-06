@@ -31,13 +31,16 @@ def index():
 def findmatches(data, numplayers, genre, mode):
 
     dataout = []
-
+    print(mode)
+    print(genre)
     genre = genre.strip()
     mode = mode.strip()
+
     if not numplayers:
         numplayers = 1
-    if genre != "Cards" and genre != "Drawing":
-        genre = genre[1:-1]
+    if genre != "all":
+        if genre != "Cards" and genre != "Drawing":
+            genre = genre[1:-1]
     numplayers = int(numplayers)
 
     for game in data:
