@@ -86,3 +86,14 @@ def bubble_sort_func(data, index):
                 data[j], data[j + 1] = data[j + 1], data[j]
 
     return data
+
+@app.route('/ast', methods=['POST','GET'])
+def ast():
+    print("Webpage change initiated")
+    if request.method == 'GET': # GET request is sent when html wants some information from the python script
+        return render_template('ast.html', showast = 0)
+    if request.method == 'POST':
+        return render_template('ast.html', showast = 1)
+
+ 
+
