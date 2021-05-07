@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AST Tree</title>
+	<link rel="icon" type="image/png" href="https://i.ibb.co/SdxwqHd/Untitled-design-1-removebg-preview.png"/>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<a href=\><img src="https://i.ibb.co/SdxwqHd/Untitled-design-1-removebg-preview.png" width="100" height="100" align="middle"></img></a>
+	<center>
+		<div id="container">
+    			<div id="texts" style="float:centre">
+				<div id="texts">
+				<h1 style="font-family:verdana;font-size:500%;color:white;"><center>ABSTRACT SYNTAX TREE</center></h1>
+				</div>
+    			</div>
+		</div><br>
+
+		<div style="background-color: white; opacity: 90%;border-radius: 10%;height: fit-content; width: 90%;margin-bottom: 5%;">
+			<br />
+			<center>
+			<p style="width: 90%;line-height: 1.25;text-shadow: 0px 0px #FF0000;">
+				In computer science, an abstract syntax tree (AST), or just syntax tree, is a tree representation of the abstract syntactic structure of source code written in a programming language. Each node of the tree denotes a construct occurring in the source code.<br />
+
+
+				The syntax is "abstract" in the sense that it does not represent every detail appearing in the real syntax, but rather just the structural or content-related details. For instance, grouping parentheses are implicit in the tree structure, so these do not have to be represented as separate nodes. Likewise, a syntactic construct like an if-condition-then expression may be denoted by means of a single node with three branches.<br />
+
+
+				This distinguishes abstract syntax trees from concrete syntax trees, traditionally designated parse trees. Parse trees are typically built by a parser during the source code translation and compiling process. Once built, additional information is added to the AST by means of subsequent processing, e.g., contextual analysis.<br />
+
+
+				Abstract syntax trees are also used in program analysis and program transformation systems.<br />
+			</p>
+			<form action="/ast" method="POST">
+				<br>
+				<a >
+				<button style="text-shadow: 0px 0px #FF0000;" onClick="parent.open('https://bit.ly/3b7asRR')">Read More</button>
+				<button style="text-shadow: 0px 0px #FF0000;" >Site AST</button>
+				</a>
+			</form>
+				<br>
+			
+			</center>
+			<br />
+		</div>
+
+	</center>
+
+	{% if showast %}
+	<center>
+		<br />
+		<div style="background-color: white; opacity: 90%;border-radius: 5%;height: fit-content; width: 90%;margin-bottom: 5%;">
+			<br />
+			<img src="https://i.ibb.co/pQM8BJX/Counting-sort-ast.png" style="width: 90%;">
+			<br />
+			<br />
+		</div>
+	</center>
+	{% endif %}
+	
+
+</body>
+</html>
