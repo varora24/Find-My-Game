@@ -31,8 +31,7 @@ def index():
 def findmatches(data, numplayers, genre, mode):
 
     dataout = []
-    print(mode)
-    print(genre)
+    
     genre = genre.strip()
     mode = mode.strip()
 
@@ -47,7 +46,6 @@ def findmatches(data, numplayers, genre, mode):
         genrematch = False
         modematch = False
         if game["Minplayers"] <= numplayers and game["Maxplayers"] >= numplayers:
-            print(genre)
             if genre != "all":
                 if game["Category"] == genre:
                     genrematch = True
