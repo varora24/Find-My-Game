@@ -46,7 +46,10 @@ def findmatches(data, numplayers, genre, mode):
         genrematch = False
         modematch = False
         
-        if game["Minplayers"] <= numplayers and game["Maxplayers"] >= numplayers:
+        if game["Maxplayers"] < numplayers:
+            break;
+        
+        if game["Minplayers"] <= numplayers:
             if genre != "all":
                 if game["Category"] == genre:
                     genrematch = True
@@ -81,7 +84,7 @@ def bubble_sort_func(data, index):
     for i in range(length-1):
         check_valid(data[i])
         for j in range(0, length - i - 1):
-            if data[j][index] > data[j + 1][index]:
+            if data[j][index] < data[j + 1][index]:
                 data[j], data[j + 1] = data[j + 1], data[j]
 
     return data
