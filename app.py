@@ -46,10 +46,10 @@ def findmatches(data, numplayers, genre, mode):
         genrematch = False
         modematch = False
         
-        if game["Maxplayers"] < numplayers:
+        if game["Maxplayers"] < numplayers and numplayers != 101:
             break;
         
-        if game["Minplayers"] <= numplayers:
+        if game["Minplayers"] <= numplayers or numplayers == 101:
             if genre != "all":
                 if game["Category"] == genre:
                     genrematch = True
@@ -57,7 +57,7 @@ def findmatches(data, numplayers, genre, mode):
                 genrematch = True
             
             if mode != "both":
-                if game["Format"] == mode:
+                if game["Format"] == mode or game["Format"] == "App/Website":
                     modematch = True    
             else:
                 modematch = True  
