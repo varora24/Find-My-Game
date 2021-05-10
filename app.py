@@ -45,7 +45,10 @@ def findmatches(data, numplayers, genre, mode):
     for game in data:
         genrematch = False
         modematch = False
-        if game["Minplayers"] <= numplayers and game["Maxplayers"] >= numplayers:
+        if game["Maxplayers"] < numplayers:
+            break
+        
+        if game["Minplayers"] <= numplayers:
             if genre != "all":
                 if game["Category"] == genre:
                     genrematch = True
