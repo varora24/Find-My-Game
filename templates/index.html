@@ -7,14 +7,12 @@
  	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-
 	</head>
 
 	<body >	
 		<img src="https://i.ibb.co/SdxwqHd/Untitled-design-1-removebg-preview.png" width="100" height="100" align="middle"></img>
 
 		<a href=ast ><button style="position:absolute;top: 1%;right: 1%;width:75 ;height: 75;border-radius: 20%;opacity: 80%;font-size: 50%">A.S.T</button></a>
-
 
 		<div id="container">
     			<div id="texts" style="float:centre">
@@ -57,8 +55,6 @@
 		<br />
 		</form>
 
-
-
 		{% if numelements %}
 		<p>
 			<center>
@@ -73,7 +69,9 @@
 				<table style="background-color: white;width: 100%;border-radius: 50px;">
 					<tr>
 						<td style="width: 33%;">
+							<a href="{{game.URL}}">
 							<img id="game_image" style="width: 90%;max-width: 90%;max-height: 90%;border-radius: 10%;" src="{{game.Picture}}" alt="No Image" >
+							</a>
 						</td>
 						<td style="width: 50%;">
 							<h1 style="color: black;"> {{game.Title}} - {{game.Category}} </h1>
@@ -99,8 +97,6 @@
 			</center></div2>
 			{% endfor %}
 
-			
-
 			<div2 class="container"><center>
 				<table style="background-color: white;width: 100%;border-radius: 50px;">
 					<tr>
@@ -118,24 +114,16 @@
 								<form method="get" target="_blank">
          							<button type="submit" onClick="parent.open('https://github.com/varora24/Find-My-Game')">ADD</button>
          						</form>
-							</center>
-							
+							</center>	
 							
 						</td>
 					</tr>
 				</table>
 			</center></div2>
 
-
-
-
 		{% endif %}
 
 		{% endif %}
-
-	
-	
-
 
 
 	</body>
